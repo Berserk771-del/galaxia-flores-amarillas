@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#050507" />
+    <title>Galaxia de Flores Amarillas 🌻</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+    <canvas id="stars"></canvas>
+    <div class="nebula nebula-one"></div>
+    <div class="nebula nebula-two"></div>
+
+    
+    <main class="scene">
+        <section id="welcomeScreen" class="welcome-screen">
+            <div class="welcome-card">
+                <div class="welcome-flower">🌻</div>
+                <p class="welcome-small">Tengo algo bonito para ti</p>
+                <h1 class="welcome-title">Para mi niña linda 💛</h1>
+                <p class="welcome-text">Presiona el botón y deja que empiece la sorpresa.</p>
+                <button id="openSurprise" class="btn surprise-btn">Abrir mi galaxia 🌻✨</button>
+                <p class="welcome-hint">La música empezará al abrirla 🎵</p>
+            </div>
+        </section>
+
+        <section id="galaxyExperience" class="galaxy-experience" aria-hidden="true">
+            <section class="hero galaxy-hero">
+                <div class="date-pill">21 · SEPTIEMBRE</div>
+                <p class="eyebrow">Una pequeña galaxia hecha especialmente para ti</p>
+                <h1>Feliz Día de las<br><span>Flores Amarillas</span> 🌻</h1>
+                <p class="subtitle">
+                    Porque hay personas que llegan a nuestra vida y hacen que hasta el universo se vea un poquito más bonito. Esta galaxia es para ti 💛
+                </p>
+            </section>
+
+            <section id="galaxy" class="galaxy active" aria-label="Galaxia de flores amarillas">
+                <div class="center-world">
+                    <div class="planet-glow"></div>
+                    <div class="planet">
+                        <div class="sunflower">
+                            <div class="petals" aria-hidden="true">
+                                <span style="--i:0"></span><span style="--i:1"></span><span style="--i:2"></span><span style="--i:3"></span>
+                                <span style="--i:4"></span><span style="--i:5"></span><span style="--i:6"></span><span style="--i:7"></span>
+                                <span style="--i:8"></span><span style="--i:9"></span><span style="--i:10"></span><span style="--i:11"></span>
+                                <span style="--i:12"></span><span style="--i:13"></span><span style="--i:14"></span><span style="--i:15"></span>
+                            </div>
+                            <div class="flower-core"></div>
+                        </div>
+                        <div class="planet-label">Luz en mi vida</div>
+                    </div>
+                    <div class="orbit orbit-a"></div>
+                    <div class="orbit orbit-b"></div>
+                    <div class="orbit orbit-c"></div>
+                </div>
+
+                <button class="memory m1" data-message="Tu sonrisa tiene ese efecto extraño de convertir un día normal en uno especial.">
+                    <span>🌻</span><small>Tu sonrisa</small>
+                </button>
+                <button class="memory m2" data-message="Que nunca te falten motivos para sonreír, sueños por cumplir y personas que te quieran bonito.">
+                    <span>🌼</span><small>Un deseo</small>
+                </button>
+                <button class="memory m3" data-message="Eres de esas personas que hacen que todo se sienta un poco más cálido.">
+                    <span>🌻</span><small>Pura alegría</small>
+                </button>
+                <button class="memory m4" data-message="Las flores amarillas duran unos días; los recuerdos bonitos pueden quedarse para siempre.">
+                    <span>💛</span><small>Recuerdos</small>
+                </button>
+                <button class="memory m5" data-message="Hoy no te regalo solo flores: te regalo una galaxia completa para recordarte lo especial que eres.">
+                    <span>✨</span><small>Para ti</small>
+                </button>
+
+                <div class="floating-word w1">eres luz</div>
+                <div class="floating-word w2">brillas bonito</div>
+                <div class="floating-word w3">mi niña linda</div>
+                <div class="floating-word w4">pura alegría</div>
+                <div class="floating-word w5">🌻 para ti 🌻</div>
+
+                <p class="hint">Toca las flores y las estrellas para descubrir mensajes ✨</p>
+            </section>
+        </section>
+    </main>
+
+
+    <div id="messageModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-card">
+            <button id="closeModal" class="close" aria-label="Cerrar">×</button>
+            <div class="mini-flower">🌻</div>
+            <h2>Un mensaje para ti</h2>
+            <p id="modalText"></p>
+            <div class="signature">— para ti, con mucho cariño ✨</div>
+        </div>
+    </div>
+
+    <div class="hidden-player" aria-hidden="true">
+        <iframe id="floricientaFrame"
+            title="Floricienta - Flores Amarillas"
+            src=""
+            allow="autoplay; encrypted-media"
+            referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+
+    <footer>
+        Hecho con 💛 · Galaxia de Flores Amarillas
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
